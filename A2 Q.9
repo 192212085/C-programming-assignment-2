@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main()
+{
+    int arr[100];
+    int i, j, n, temp;
+
+    printf("Enter the value of N: ");
+    scanf("%d", &n);
+
+    printf("Enter the numbers:\n");
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    // sort the array in descending order using bubble sort
+    for(i = 0; i < n-1; i++)
+    {
+        for(j = 0; j < n-i-1; j++)
+        {
+            if(arr[j] < arr[j+1])
+            {
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+
+    // print the array in descending order
+    printf("The numbers arranged in descending order are given below:\n");
+    for(i = 0; i < n; i++)
+    {
+        printf("%d\n", arr[i]);
+    }
+
+    return 0;
+}
